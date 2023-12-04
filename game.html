@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <meta name="description" content="This is an example of a meta description. This 
-  will often show up in search results so it is important to write a high quality 
+  will often show up in search results so it is important to write a high-quality 
   description for each page of a website">
 
   <link rel="stylesheet" href="style.css">
@@ -68,7 +68,13 @@
   <main>
     <div id="game"></div>
     <div class="game-controls">
-      <button class="myButton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
+      <!-- Modified button to work with touch and mouse events -->
+      <button class="myButton"
+        ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)"
+        onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">
+        ACCELERATE
+      </button>
+      <!-- Restart button (if needed) -->
       <a class="restart-button myButton" href="game.html">RESTART</a>
     </div>
 
@@ -211,6 +217,12 @@
 
       function accelerate(n) {
         myGamePiece.gravity = n;
+        if ('ontouchstart' in window || navigator.maxTouchPoints){
+		console.log('Touch event detected');
+		} 
+         else {
+			console.log('Mouse event detected');
+        }
       }
     </script>
 
