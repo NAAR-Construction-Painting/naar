@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- needed for the favicon-->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+        function submitForm() 
+		{
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            // Check if email is valid
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Create FormData object to send data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('message', message);
+
+            // Make AJAX request using Fetch API
+            fetch('process_form.php', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Message sent successfully!');
+                    // Redirect or perform any other actions after successful submission
+                } else {
+                    alert('Error sending message. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function isValidEmail(email) {
+            // Regular expression for validating an Email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAAR</title>
+  <!-- Bootstrap Stylesheet-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <meta name="description" content="This is an example of a meta description. This 
+  will often show up in search results so it is important to write a high quality 
+  description for each page of a website">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<header>
+	    <div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2">
+					<img src="images/logos.png" height="159" width="300" alt=""
+					class="img-fluid">
+				</div>
+				<div class="col-sm-10">
+					<h1>NAAR Construction & Painting LLC </h1>
+				</div>
+			</div>
+		</div>
+		
+	</header>
+	
+	<nav>
+		<ul>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-2">
+					</div>
+					<div class="col-sm-2">
+						<li><a href="index.html"><button><i class="fa fa-home" aria-hidden="true"></i> Home</button></a></li>
+					</div>
+					<div class="col-sm-2">
+						<li><a href="gallery.html"><button><i class="fa fa-camera-retro" aria-hidden="true"></i> Gallery</button></a></li>
+					</div>
+					<div class="col-sm-2">
+						<li><a href="contact.html"><button><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact us</button></a></li>
+					</div>
+					<div class="col-sm-2">
+						<li><a href="game.html"><button><i class="fa fa-gamepad" aria-hidden="true"></i>play a game?</button></a></li>
+					</div>
+					<div class="col-sm-2">
+					</div>
+				</div>	
+			</div>
+		</ul>
+			
+		
+	</nav>
+	
+	<main>
+		
+        <div class="container-fluid">
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-sm-12">
+                    <h2>Contact Us</h2>
+                    <p>Have a question or inquiry? Fill out the form below:</p>
+                 </div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+                    <!-- Contact Form -->
+					<form id="contactForm">
+						<div class="row">
+							<label for="name">Your Name   :</label>
+							<input type="text" id="name" name="name" class="mb-3" style="width: 80%;" required>
+						</div>
+						<div class="row">
+                        <label for="email">Your Email  :</label>
+                        <input type="email" id="email" name="email" class="mb-3" style="width: 80%;" required>
+						</div>
+						<div class="row">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" class="mb-3" style="width: 80%;">
+						</div>
+				</div>
+				<div class="col-sm-4 d-flex flex-column align-items-center ">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" rows="8" class="form-control mb-3 custom-box" required></textarea>
+
+                        <button type="button" onclick="submitForm()" class="btn custom-button">Submit</button>
+					</form>
+				</div>
+				<div class="col-sm-4">
+					<blockquote>
+						<p>Welcome to our inquiry canvas – where your ideas become a masterpiece! 🎨</p>
+						
+						<ol>
+							<li>Brushstroke 1: Share your name and email, so we can start envisioning your dream project.</li>
+							<li>Brushstroke 2: Click the "Submit" button to send your creative concepts our way! 🚀</li>
+						</ol>
+						
+						<p>Thanks for choosing NAAR for your painting journey! We're excited to bring color to your space!</p>
+					</blockquote>
+				</div>
+			</div>   
+        </div>
+        
+	</main>
+		
+	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6">
+					<blockquote>At NAAR, we're more than just painters; we're in the business 
+							of transformation. Specializing in both painting and construction, our motto is clear:
+							Transforming Spaces, Elevating Lifestyles. Whether it's adding a pop of color or
+							structurally enhancing your space, our team is dedicated to bringing your vision to life. 
+							We understand the practicality of construction and the artistry of painting, combining both
+							to create spaces that stand out and stand the test of time.</blockquote>
+				</div>
+				<div class="col-sm-6">
+					<div class="row">
+						<div class="col-sm-4">
+							<i class="fa fa-instagram instagram-icon" aria-hidden="true"></i>
+							<h5>Check Out our instagram</h5>
+						</div>
+						<div class="col-sm-4">
+							<i class="fa fa-linkedin-square linkedin-icon" aria-hidden="true"></i>
+							<h5>Check Out our Linkedin</h5>
+						</div>
+						<div class="col-sm-4">
+							<i class="fa fa-language language-icon" aria-hidden="true"></i>
+							<h5>Español</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+						
+		<small>&copy; Daniel Saavedra. All rights reserved.</small>
+	</footer>
+	
+	<!--jQuery, Popper, and Bootstrap Javascript files-->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	
+
+
+</body>
+</html>
