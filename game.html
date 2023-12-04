@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <meta name="description" content="This is an example of a meta description. This 
-  will often show up in search results so it is important to write a high-quality 
+  will often show up in search results so it is important to write a high quality 
   description for each page of a website">
 
   <link rel="stylesheet" href="style.css">
@@ -67,21 +67,29 @@
 
   <main>
     <div id="game"></div>
-    <div class="game-controls">
-      <!-- Modified button to work with touch and mouse events -->
-      <button class="myButton"
-        ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)"
-        onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">
-        ACCELERATE
-      </button>
-      <!-- Restart button (if needed) -->
-      <a class="restart-button myButton" href="game.html">RESTART</a>
-    </div>
+    <div class="game-controls desktop">
+		<button class="myButton" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">FLAP WINGS</button>
+		<a href="" ><button class="myButton">PLAY AGAIN</button></a>
+	</div>
+					
+	<div class="game-controls mobile">
+		<button class="myButton" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)">FLAP WINGS</button>
+		<a href="" ><button class="myButton">PLAY AGAIN</button></a>
+	</div>
+
 
     <script>
       var myGamePiece;
       var myObstacles = [];
       var myScore;
+	  var canvasWidth = 640;
+	  var canvasHeight = 360;
+	  
+	  if (window.innerWidth < 768){
+		canvasWidth = 300;
+		canvasHeight= 300;
+	  }
+
 
       function startGame() {
         myGamePiece = new component(30, 30, "images/irregular_image.png", 10, 120, "image");
@@ -94,8 +102,8 @@
       var myGameArea = {
         canvas: document.createElement("canvas"),
         start: function () {
-          this.canvas.width = 640;
-          this.canvas.height = 360;
+          this.canvas.width = canvasWidth;
+          this.canvas.height = canvasHeight;
           this.context = this.canvas.getContext("2d");
           var myGame = document.getElementById("game");
           myGame.insertBefore(this.canvas, myGame.childNodes[0]);
@@ -173,40 +181,40 @@
       }
 
       function updateGameArea() {
-        var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-        for (i = 0; i < myObstacles.length; i += 1) {
-          if (myGamePiece.crashWith(myObstacles[i])) {
+    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+    for (i = 0; i < myObstacles.length; i += 1) {
+        if (myGamePiece.crashWith(myObstacles[i])) {
             return;
-          }
         }
-        myGameArea.clear();
-        myGameArea.frameNo += 1;
-        if (myGameArea.frameNo == 1 || everyinterval(150)) {
-          x = myGameArea.canvas.width;
-          minHeight = 20;
-          maxHeight = 200;
-          height = Math.floor(
+    }
+    myGameArea.clear();
+    myGameArea.frameNo += 1;
+    if (myGameArea.frameNo == 1 || everyinterval(150)) {
+        x = myGameArea.canvas.width;
+        minHeight = 20;
+        maxHeight = 200;
+        height = Math.floor(
             Math.random() * (maxHeight - minHeight + 1) + minHeight
-          );
-          minGap = 50;
-          maxGap = 200;
-          gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-          myObstacles.push(
+        );
+        minGap = 50;
+        maxGap = 200;
+        gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
+        myObstacles.push(
             new component(20, height, "#0f0a57", x, 0)
-          );
-          myObstacles.push(
+        );
+        myObstacles.push(
             new component(20, x - height - gap, "#0f0a57", x, height + gap)
-          );
-        }
-        for (i = 0; i < myObstacles.length; i += 1) {
-          myObstacles[i].x += -1;
-          myObstacles[i].update();
-        }
-        myScore.text = "SCORE: " + myGameArea.frameNo;
-        myScore.update();
-        myGamePiece.newPos();
-        myGamePiece.update();
-      }
+        );
+    }
+    for (i = 0; i < myObstacles.length; i += 1) {
+        myObstacles[i].x += -1;
+        myObstacles[i].update();
+    }
+    myGamePiece.newPos();
+    myGamePiece.update();
+    myScore.text = "SCORE: " + myGameArea.frameNo;
+    myScore.update();  // Draw the score after drawing the game piece
+}
 
       function everyinterval(n) {
         if ((myGameArea.frameNo / n) % 1 == 0) {
@@ -217,12 +225,6 @@
 
       function accelerate(n) {
         myGamePiece.gravity = n;
-        if ('ontouchstart' in window || navigator.maxTouchPoints){
-		console.log('Touch event detected');
-		} 
-         else {
-			console.log('Mouse event detected');
-        }
       }
     </script>
 

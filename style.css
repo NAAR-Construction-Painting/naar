@@ -305,6 +305,11 @@ footer blockquote {
     padding: 5px; /* Add some padding for better visual appeal */
     border-radius: 5px; /* Optionally, add rounded corners */
 }
+.mobile{
+	display:none;
+}
+
+
 	
 	
 /*Css for Tablets*/
@@ -318,6 +323,13 @@ footer blockquote {
 @media only screen and (max-width: 768px){
 	h1{
 		font-size:1.5em;
+	}
+	.desktop{
+		display:none;
+	}
+	.mobile{
+		display: block;
+		touch-action: manipulation;
 	}
 }
 	
