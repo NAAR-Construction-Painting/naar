@@ -301,9 +301,9 @@ blockquote{
     padding: 30px;
 }
 footer blockquote {
-    background-color: #e6f2ff; /* Set your desired background color */
-    padding: 5px; /* Add some padding for better visual appeal */
-    border-radius: 5px; /* Optionally, add rounded corners */
+    background-color: #e6f2ff; 
+    padding: 5px; 
+    border-radius: 5px; 
 }
 .mobile{
 	display:none;
