@@ -356,10 +356,10 @@ footer blockquote {
     background-image: url(images/alternate-headerm.png); 
 
     }
-	h3{
+	.home-naar h3{
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	color:#00004d;
-	font-size: 1em;
+	font-size: 2em;
 	}
 	
 
