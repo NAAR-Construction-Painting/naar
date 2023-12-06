@@ -383,5 +383,11 @@ footer blockquote {
 	color:#00004d;
 	font-size: 1.5em;
 	}
+	.video-container iframe {
+        width: 100%; /* Make the video container full width on small screens */
+        height: 100%; /* Make the video container full height */
+        border-radius: 15px;
+        border: 2px solid black;
+    }
 	
 
