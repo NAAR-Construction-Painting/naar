@@ -355,6 +355,11 @@ footer blockquote {
 	.home-naar:hover {
     background-image: url(images/alternate-headerm.png); 
 
-}
+    }
+	h3{
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	color:#00004d;
+	size: 1em;
+	}
 	
 
