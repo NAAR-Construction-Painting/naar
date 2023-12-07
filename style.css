@@ -108,7 +108,7 @@ h2{
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 h3{
-	text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.9);
+	text-shadow: 2px 2px 8px rgba(0, 0, 255, 0.9);
 	color:#FFFFFF;
 	
 }
@@ -336,7 +336,7 @@ footer blockquote {
     background-position: center;
     background-repeat: no-repeat;
 	display: flex;
-    padding: 20px; /* Add padding to ensure content is readable */
+    padding: 50px; /* Add padding to ensure content is readable */
     height: 300px; /* Set a fixed height for the block */
 	
 }
@@ -359,7 +359,7 @@ footer blockquote {
     background-position: center;
     background-repeat: no-repeat;
 	display: flex;
-    padding: 20px; /* Add padding to ensure content is readable */
+    padding: 50px; /* Add padding to ensure content is readable */
     height: 300px; /* Set a fixed height for the block */
 	
 }
@@ -382,7 +382,7 @@ footer blockquote {
     background-position: center;
     background-repeat: no-repeat;
 	display: flex;
-    padding: 20px; /* Add padding to ensure content is readable */
+    padding: 50px; /* Add padding to ensure content is readable */
     height: 300px; /* Set a fixed height for the block */
 	
 }
@@ -447,7 +447,7 @@ footer blockquote {
 
     }
 	.home-naar h3{
-	text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.9);
+	text-shadow: 2px 2px 8px rgba(0, 0, 255, 0.9);
 	color:#FFFFFF;
 	font-size: 1.5em;
 	}
@@ -457,5 +457,11 @@ footer blockquote {
         border-radius: 15px;
         border: 2px solid black;
     }
-	
+	.contact-block,
+    .gallery-block,
+    .game-block {
+        height:220px;
+        padding: 5px; /* Add padding for better appearance */
+        margin-top: 5px; /* Adjust the margin as needed */
+    }
 
