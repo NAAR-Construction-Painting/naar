@@ -329,7 +329,75 @@ footer blockquote {
 	border: 2px solid black;
 	
 }
-
+.contact-block {
+	position: relative; 
+    background-image: url('images/contact.jpg'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+	display: flex;
+    padding: 20px; /* Add padding to ensure content is readable */
+    height: 300px; /* Set a fixed height for the block */
+	
+}
+.contact-block .contact-content {
+    position: absolute; /* Set the position property to absolute within the relative container */
+    top: 50%; /* Adjust as needed to vertically center the content */
+    left: 50%; /* Adjust as needed to horizontally center the content */
+    transform: translate(-50%, -50%); /* Center the content using the translate transform */
+    text-align: center; /* Center text within the container */
+    color: ; /* Set text color to white or a suitable color for visibility */
+}
+.contact-block .contact-content h4,
+.contact-block .contact-content blockquote {
+    background: transparent;
+}
+.gallery-block {
+	position: relative; 
+    background-image: url('images/gallery.jpg'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+	display: flex;
+    padding: 20px; /* Add padding to ensure content is readable */
+    height: 300px; /* Set a fixed height for the block */
+	
+}
+.gallery-block .gallery-content {
+    position: absolute; /* Set the position property to absolute within the relative container */
+    top: 50%; /* Adjust as needed to vertically center the content */
+    left: 50%; /* Adjust as needed to horizontally center the content */
+    transform: translate(-50%, -50%); /* Center the content using the translate transform */
+    text-align: center; /* Center text within the container */
+    color: ; /* Set text color to white or a suitable color for visibility */
+}
+.gallery-block .gallery-content h4,
+.gallery-block .gallery-content blockquote {
+    background: transparent;
+}
+.game-block {
+	position: relative; 
+    background-image: url('images/game.jpg'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+	display: flex;
+    padding: 20px; /* Add padding to ensure content is readable */
+    height: 300px; /* Set a fixed height for the block */
+	
+}
+.game-block .game-content {
+    position: absolute; /* Set the position property to absolute within the relative container */
+    top: 50%; /* Adjust as needed to vertically center the content */
+    left: 50%; /* Adjust as needed to horizontally center the content */
+    transform: translate(-50%, -50%); /* Center the content using the translate transform */
+    text-align: center; /* Center text within the container */
+    color: ; /* Set text color to white or a suitable color for visibility */
+}
+.game-block .game-content h4,
+.game-block .game-content blockquote {
+    background: transparent;
+}
 
 	
 	
@@ -378,8 +446,8 @@ footer blockquote {
 
     }
 	.home-naar h3{
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	color:#00004d;
+	text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.9);
+	color:#FFFFFF;
 	font-size: 1.5em;
 	}
 	.video-container iframe {
