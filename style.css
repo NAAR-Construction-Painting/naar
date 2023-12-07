@@ -305,7 +305,7 @@ footer blockquote {
     border-radius: 5px; 
 }
 .mobile{
-	display:none;
+	display:block;
 }
 .video-container {
     overflow: hidden;
@@ -397,6 +397,7 @@ footer blockquote {
 .game-block .game-content h4,
 .game-block .game-content blockquote {
     background: transparent;
+	color: solid black;
 }
 
 	
