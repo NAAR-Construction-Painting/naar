@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Bitter&family=Montserrat+Alternates:ital,wght@1,300&family=Open+Sans:ital,wght@1,300&family=Patrick+Hand+SC&family=Righteous&display=swap');
 body {
-    ffont-family: 'Baloo Thambi 2',cursive;
+    font-family: 'Baloo Thambi 2',cursive;
     margin: 0;
    
 }
@@ -108,7 +108,7 @@ h2{
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 h3{
-	text-shadow: 2px 2px 8px rgba(0, 0, 255, 0.9);
+	text-shadow: 2px 2px 8px rgba(0, 65, 255, 0.9);
 	color:#FFFFFF;
 	
 }
@@ -116,11 +116,11 @@ h3{
 h4{
 	color: bold black;
 	text-align: center;
-	font-size: 1em
+	font-size: 1em;
+	text-shadow: 2px 2px 8px rgba(0, 0, 255, 1);
+	color:#FFFFFF;
 }
 	
-	
-}
 h5{
 	text-align: center;
 	
@@ -160,7 +160,7 @@ img{
 	 
 }
 .home-naar h3 {
-    margin: 0; /* Remove default margin for better centering */
+    margin: 0; 
 	font-size: 3.5em;
 }
 .main {
@@ -194,7 +194,7 @@ img{
     color: #66b3ff ; 
   }
 .instagram-icon {
-    font-size: 30px; /* Adjust the size as needed */
+    font-size: 30px; 
 }
 .linkedin-icon {
     font-size: 30px; /* Adjust the size as needed */
@@ -298,6 +298,7 @@ blockquote{
 	background-color: #FFFFFF;
     border-left: 10px #FFFFFF;
     padding: 30px;
+	text-align: center; 
 }
 footer blockquote {
     background-color: #e6f2ff; 
@@ -351,6 +352,20 @@ footer blockquote {
 .contact-block .contact-content h4,
 .contact-block .contact-content blockquote {
     background: transparent;
+	
+}
+.contact-content h4, 
+.gallery-content h4,
+.game-content h4{
+    margin-bottom: 0px; 
+}
+
+.contact-content blockquote, 
+.gallery-content blockquote,
+.game-content blockquote{
+    margin-top: 0px; 
+	text-shadow: 2px 2px 8px rgba(0, 0, 255, 1);
+	color:#FFFFFF;
 }
 .gallery-block {
 	position: relative; 
@@ -364,12 +379,12 @@ footer blockquote {
 	
 }
 .gallery-block .gallery-content {
-    position: absolute; /* Set the position property to absolute within the relative container */
+    position: absolute; 
     top: 50%; /* Adjust as needed to vertically center the content */
     left: 50%; /* Adjust as needed to horizontally center the content */
-    transform: translate(-50%, -50%); /* Center the content using the translate transform */
-    text-align: center; /* Center text within the container */
-    color: ; /* Set text color to white or a suitable color for visibility */
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    
 }
 .gallery-block .gallery-content h4,
 .gallery-block .gallery-content blockquote {
@@ -464,4 +479,4 @@ footer blockquote {
         padding: 5px; /* Add padding for better appearance */
         margin-top: 5px; /* Adjust the margin as needed */
     }
-
+}	
