@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  function changeImage() {
+    var homeNaar = document.querySelector('.home-naar');
+    var alternateImages = ['images/headerm.png', 'images/alternate-headerm.png'];
+    var currentIndex = 0;
+    
+    function setImage() {
+      homeNaar.style.backgroundImage = 'url(' + alternateImages[currentIndex] + ')';
+      currentIndex = (currentIndex + 1) % alternateImages.length;
+    }
+
+    // Check if the screen width is less than or equal to 768 pixels (mobile)
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    // Change image every 3 seconds only on mobile
+    if (isMobile()) {
+      setInterval(setImage, 3000);
+    }
+  }
+  
+  document.addEventListener("DOMContentLoaded", changeImage);
+</script>
   <!-- needed for the favicon-->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
